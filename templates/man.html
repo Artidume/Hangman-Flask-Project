@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <img src="/static/hang{{num}}.png">
+    {%if num==10%}
+    <p><b><em><u>LOSE.......</u></em></b></p>
+    <a href="/">Start a new game?</a>
+    {%else%}
+        <p>Letters left
+        {%for i in range(0,letters_left|length)%}
+            {{letters_left[i]}}, 
+        {%endfor%}
+        </p>
+        <p> LIVES: {{10-num}}</p>
+        <p>{{render_output}}</p>
+
+
+        {%if show == True%}
+        <!-- THIS IS HERE FOR DEBUG-->
+        <p>Word is {{word}} btw</p>
+        <a href="/main">GO here</a>
+        {%endif%}
+
+        <form action="/data" method="POST">    
+            <p>INPUT LETTER</p>
+            <input type="text" maxlength=1 name="guess">
+        </form>
+    {%endif%}
+
+</body>
