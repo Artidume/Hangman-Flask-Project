@@ -62,9 +62,10 @@ def deal_with_data():
         else:
             lives-=1
         render_output = hangman.render(correct_letters,word)
-        return render_template("man.html",num=10-lives, letters_left=letters_left,correct_letters=correct_letters, show=False, render_output=render_output)
+        return render_template("man.html",num=10-lives, letters_left=letters_left,correct_letters=correct_letters, show=False, render_output=render_output, word=word)
     except:
         return redirect("/")
+
 
 
 
