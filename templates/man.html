@@ -10,6 +10,7 @@
     <img src="/static/hang{{num}}.png">
     {%if num==10%}
     <p><b><em><u>LOSE.......</u></em></b></p>
+    <p>The word was <b><em>{{word}}</em></b></p>
     <a href="/">Start a new game?</a>
     {%else%}
         <p>Letters left
@@ -32,5 +33,6 @@
             <input type="text" maxlength=1 name="guess">
         </form>
     {%endif%}
+
 
 </body>
